@@ -14,10 +14,10 @@ object StatefulWordCount {
     val ssc = new StreamingContext(sparkConf,Seconds(5))
 
     /**
-      * 如果使用了stateful的算子，必须要设置checkpoint
+      * 如果使用了stateful的算子，必须要设置checkpoint的存放路径
       * 在生产环境中，建议大家把checkpoint设置到HDFS的某个文件夹中
       */
-    ssc.checkpoint(".")
+    ssc.checkpoint("E:/study_data/sparkstreaming/checkpoint")
 
     val lines = ssc.socketTextStream("192.168.52.138",6789)
 

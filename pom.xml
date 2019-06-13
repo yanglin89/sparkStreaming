@@ -131,6 +131,13 @@
       <version>${spark.version}</version>
     </dependency>
 
+    <!-- log4j 日志输出到flume  -->
+    <dependency>
+      <groupId>org.apache.flume.flume-ng-clients</groupId>
+      <artifactId>flume-ng-log4jappender</artifactId>
+      <version>1.6.0</version>
+    </dependency>
+
 
     <dependency>
       <groupId>com.mchange</groupId>

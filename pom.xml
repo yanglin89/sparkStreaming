@@ -160,8 +160,11 @@
   </dependencies>
 
   <build>
+    <!-- 如果下面两个Directory 打开，则项目编译时只会扫描下面路径的包，编译报错，src/main/java 下的不能被识别 -->
+    <!--
     <sourceDirectory>src/main/scala</sourceDirectory>
     <testSourceDirectory>src/test/scala</testSourceDirectory>
+    -->
     <plugins>
       <plugin>
         <groupId>org.scala-tools</groupId>

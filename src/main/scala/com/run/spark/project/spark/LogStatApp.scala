@@ -36,7 +36,6 @@ object LogStatApp {
       "key.deserializer" -> classOf[StringDeserializer],
       "value.deserializer" -> classOf[StringDeserializer],
       "group.id" -> "sparkStreaming"
-
     )
 
     val message = KafkaUtils.createDirectStream[String,String](ssc,
@@ -112,9 +111,6 @@ object LogStatApp {
         CourseSearchClickCountDao.save(list)
       })
     })
-
-
-
 
 
     ssc.start()

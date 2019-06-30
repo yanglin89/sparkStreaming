@@ -42,6 +42,12 @@ object StatefulWordCount {
     val current = currentValues.sum
     val pre = preValues.getOrElse(0)
 
+    /**
+      * Option[T]是由给定类型的零或一个元素的一种容器。
+      * Option[T]可以是 Some [T]或None对象，它代表缺少的值。
+      * 例如，如果已找到与给定键对应的值，则Scala的Map的get方法会生成Some(value)，
+      * 如果在Map中未定义给定的键，则将返回None
+      */
     Some(current + pre)
   }
 

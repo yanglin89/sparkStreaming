@@ -30,13 +30,16 @@ object CourseClickCountDao {
     /**
       *  通过 incrementColumnValue() 可以直接将之前已经存在的rowkey 和 后续新添加的相同的 rowkey 的值相加
       *  从而不需要我们先获取之前的 rowkey 对应的值，然后再做运算进行添加
+      *  第一行数据为rowkey的值，第二行为cf的名称，第三行为列的名称，第四行为列的值
       */
     for(ele <- list){
-      table.incrementColumnValue(Bytes.toBytes(ele.day_course),
+      table.incrementColumnValue(
+        Bytes.toBytes(ele.day_course),
         Bytes.toBytes(cf),
         Bytes.toBytes(qualifer),
         ele.click_count
       )
+
     }
   }
 

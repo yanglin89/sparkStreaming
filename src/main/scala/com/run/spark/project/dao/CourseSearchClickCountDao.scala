@@ -32,7 +32,8 @@ object CourseSearchClickCountDao {
       *  从而不需要我们先获取之前的 rowkey 对应的值，然后再做运算进行添加
       */
     for(ele <- list){
-      table.incrementColumnValue(Bytes.toBytes(ele.day_search_course),
+      table.incrementColumnValue(
+        Bytes.toBytes(ele.day_search_course),
         Bytes.toBytes(cf),
         Bytes.toBytes(qualifer),
         ele.click_count

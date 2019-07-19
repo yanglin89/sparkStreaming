@@ -22,6 +22,12 @@ object StatefulWordCount {
     val lines = ssc.socketTextStream("192.168.52.138",6789)
 
     val result = lines.flatMap(_.split(" ")).map((_,1))
+
+    /**
+      * updateStateByKey(updateFunc:updateFunction(Seq[T],Option[T]),partitioner: Partitioner)
+      * updateStateByKey 有两个参数，第一个参数为更新逻辑函数，updateFunction
+      * 第二个为 Partitioner，用 _ 表示每一个 Partitioner
+      */
     val state = result.updateStateByKey[Int](updateFunction _)
 
     state.print()
